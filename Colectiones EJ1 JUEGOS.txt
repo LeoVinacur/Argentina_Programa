@@ -1,0 +1,68 @@
+module CarlosDuty
+  @cantidad_logros = 0
+
+  def self.dificultad
+    dificultad = 30 - @cantidad_logros * 0.5
+  end
+
+  def self.violento?
+    true
+  end
+
+  def self.jugar!(t)
+    if (t>2)
+      @cantidad_logros +=1
+    end
+  end
+
+end
+
+
+
+module TimbaElLeon
+  @dificultad = 25
+
+  def self.dificultad
+    @dificultad 
+  end
+
+  def self.violento?
+    false              // Notese que no hago asignaciones, directamente le pongo false o true
+  end
+
+  def self.jugar!(t);
+    @dificultad = dificultad + t 
+  end
+
+end
+
+
+module Metroide
+
+  @nivel_espacial = 3
+
+  def self.dificultad
+    dificultad = 100
+  end
+
+  def self.violento?
+    @nivel_espacial>5   // Fijese que no uso un IF, directamente digo: nivel espacial es mayor a 5? Y el método me contesta true o false
+  end
+
+  def self.jugar!(t);
+    @nivel_espacial +=t
+  end
+
+end
+
+-----------------------------------------------------
+Este método no lo tuve que usar:
+if  @nivel_espacial>5
+    violento = true
+  end
+
+directamente 
+
+def self.violento?
+    @nivel_espacial>5   // Fijese que no uso un IF, directamente digo: nivel espacial es mayor a 5? Y el método me contesta true o false
+  end

@@ -1,0 +1,72 @@
+module Pepita
+    @energia = 100
+  
+    def self.volar_en_circulos!
+        @energia -= 10
+    end
+
+def self.volar_hacia!(destino) 
+    @ciudad= destino
+    @energia -= 100 
+  end
+  
+     def self.comer_lombriz!
+        @energia += 20
+    end
+end
+
+--------------------------------------------------
+
+module Pepita
+  @energia = 100
+  @ciudad = Obera
+  
+  def self.energia
+    @energia 
+  end
+  
+    def self.ciudad
+    @ciudad
+  end
+  
+  def self.cantar!
+    'pri pri pri'
+  end
+  
+  def self.comer_lombriz!
+    @energia += 20
+  end
+  
+  def self.volar_en_circulos!
+    @energia -= 10
+  end
+  
+  def self.volar_hacia!(destino)
+    @energia -= 100
+    @ciudad = destino
+  end
+  
+  
+end
+
+def self.volar_hacia!(destino)
+    @energia -= (@ciudad.kilometro-destino.kilometro).abs/2
+    @ciudad = destino
+  end
+
+----------------------------------------------------------
+Un objeto le da la orden a otro:
+
+module Pachorra
+
+  def self.ave=(un_ave)   /// firma contratro con ave // NO OLVIDAR EL = pegado después de ave
+    @ave = un_ave
+  end
+  
+  def self.entrenar_ave!
+    10.times { @ave.volar_en_circulos! }
+    @ave.comer_alpiste! 30
+    5.times { @ave.volar_en_circulos! }
+    @ave.hacer_lo_que_quiera!
+  end
+end

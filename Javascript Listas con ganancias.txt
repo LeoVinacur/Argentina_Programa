@@ -1,0 +1,44 @@
+ gananciaTotal([
+      { mes: "enero", ganancia: 2 }, 
+      { mes: "febrero", ganancia: 3 }
+  ])
+ gananciaTotal([
+      { mes: "enero", ganancia: 2 }, 
+      { mes: "febrero", ganancia: 3 }, 
+      { mes: "marzo", ganancia: 1 }, 
+      { mes: "abril", ganancia: 8 }, 
+      { mes: "mayo", ganancia: 8 }, 
+      { mes: "junio", ganancia: -1 }
+  ])
+
+ 
+
+function gananciaTotal3(balancesDeUnPeriodo) {
+  let sumatoria = 0;
+  sumatoria = sumatoria + balancesDeUnPeriodo[0].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[1].ganancia;
+  sumatoria = sumatoria + balancesDeUnPeriodo[2].ganancia;
+  return sumatoria;
+}
+
+
+
+function gananciaTotal(balancesDeUnPeriodo) {
+  let sumatoria = 0;
+  for (let balance of balancesDeUnPeriodo) {
+    sumatoria = sumatoria + balance.ganancia;
+  }
+  return sumatoria;
+}
+
+function promedio(listaDeNumeros) {
+    return sumatoria(listaDeNumeros) / longitud(listaDeNumeros);
+}
+
+function sumatoria(listaDeNumeros) {
+  let sumatoria = 0;
+  for (let numero of listaDeNumeros) {
+    sumatoria = sumatoria + numero;
+  }
+  return sumatoria;
+}
